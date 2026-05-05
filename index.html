@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras em Família</title>
+    <!-- Fonte Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ícones Phosphor -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Estilos Customizados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="glass-header">
+            <div class="logo">
+                <i class="ph-fill ph-shopping-cart"></i>
+                <h1>Compras em Família</h1>
+            </div>
+            <p class="subtitle">Sincronizado em tempo real</p>
+        </header>
+
+        <main class="content">
+            <!-- Formulário para adicionar itens -->
+            <form id="add-item-form" class="glass-card add-form">
+                <div class="input-group">
+                    <input type="text" id="item-name" placeholder="O que precisamos comprar?" required autocomplete="off">
+                </div>
+                
+                <div class="form-row">
+                    <div class="select-group">
+                        <select id="item-category" required>
+                            <option value="" disabled selected>Escolha a Categoria</option>
+                            <option value="carnes">🥩 Carnes</option>
+                            <option value="hortifruti">🥬 Hortifruti</option>
+                            <option value="biscoitos">🍪 Biscoitos & Doces</option>
+                            <option value="limpeza">🧼 Produtos de Limpeza</option>
+                            <option value="outros">📦 Outros</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="ph-bold ph-plus"></i>
+                        <span>Adicionar</span>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Lista de Itens -->
+            <div class="glass-card list-container">
+                <div class="list-header">
+                    <h2>Nossa Lista</h2>
+                    <span id="items-count" class="badge">0 itens</span>
+                </div>
+                
+                <ul id="shopping-list" class="shopping-list">
+                    <!-- Os itens serão inseridos aqui pelo JavaScript -->
+                    <div class="empty-state">
+                        <i class="ph-duotone ph-basket"></i>
+                        <p>A lista está vazia.<br>Adicione itens acima!</p>
+                    </div>
+                </ul>
+            </div>
+        </main>
+        
+        <div id="setup-warning" class="setup-warning hidden">
+            <p><i class="ph-bold ph-warning"></i> <strong>Banco de dados não configurado!</strong><br>Edite o arquivo app.js com suas chaves do Firebase.</p>
+        </div>
+    </div>
+
+    <!-- Firebase SDK (Modular) -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
