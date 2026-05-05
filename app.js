@@ -33,10 +33,12 @@ const itemsCount = document.getElementById("items-count");
 
 // Nomes bonitos para as categorias
 const categoryNames = {
-    carnes: "Carnes",
     hortifruti: "Hortifruti",
-    biscoitos: "Biscoitos & Doces",
+    mercearia: "Mercearia",
+    carnes: "Carnes & Açougue",
     limpeza: "Limpeza",
+    higiene: "Higiene Pessoal",
+    bebidas: "Bebidas",
     outros: "Outros"
 };
 
